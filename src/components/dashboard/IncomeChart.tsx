@@ -1,10 +1,32 @@
 import React from "react";
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, PointElement, LineElement, Legend, Tooltip } from "chart.js";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  BarController,
+  LineController,
+  Legend,
+  Tooltip,
+} from "chart.js";
 import { Chart } from "react-chartjs-2";
 import { Card } from "../ui/Card";
 import { ChartData } from "../../types/useChartData.types";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Legend, Tooltip);
+// ✅ Register both controllers + elements
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement,
+  LineElement,
+  BarController,
+  LineController,
+  Legend,
+  Tooltip
+);
 
 interface IncomeChartProps {
   data: ChartData[];
